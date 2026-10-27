@@ -1,4 +1,5 @@
 import ProductExplorer from "./ProductExplorer";
+import { appUrl, assetUrl } from "../shared/urls";
 import "./sections.css";
 
 const questions = [
@@ -63,7 +64,7 @@ function Product({
       className={`pl-pad${compact ? " pl-pad-compact" : ""}${className ? ` ${className}` : ""}`}
     >
       <img
-        src={`/assets/${design}.svg`}
+        src={assetUrl(`/assets/${design}.svg`)}
         alt=""
         draggable="false"
         loading="lazy"
@@ -294,7 +295,10 @@ export default function LandingSections() {
             <span>Твой дизайн.</span>
           </h2>
           <p>Начни с картинки. Или просто с идеи.</p>
-          <a className="pl-button pl-button-primary" href="/custom/create">
+          <a
+            className="pl-button pl-button-primary"
+            href={appUrl("/custom/create")}
+          >
             Открыть конструктор <Arrow />
           </a>
         </div>

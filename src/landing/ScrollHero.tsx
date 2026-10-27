@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { assetUrl } from "../shared/urls";
 
 // Identical cells and mirrored neighbours keep the centre mat fixed at row/column centre.
 const designs = [
@@ -235,7 +236,7 @@ export default function ScrollHero() {
               className={`pl-hero-mat${index === 7 ? " is-main" : ""}`}
             >
               <img
-                src={`/assets/hero-${design}.webp`}
+                src={assetUrl(`/assets/hero-${design}.webp`)}
                 alt=""
                 fetchPriority={index === 7 ? "high" : "auto"}
                 decoding="async"
@@ -246,7 +247,7 @@ export default function ScrollHero() {
         </div>
         <div className="pl-hero-closeup" ref={closeup} aria-hidden="true">
           <img
-            src="/assets/hero-landscape.webp"
+            src={assetUrl("/assets/hero-landscape.webp")}
             alt=""
             decoding="async"
             fetchPriority="high"

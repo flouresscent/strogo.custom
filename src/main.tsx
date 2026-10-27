@@ -1,6 +1,7 @@
 import { StrictMode, Component, type ReactNode } from "react";
 import { createRoot } from "react-dom/client";
 import { App } from "./App";
+import { appUrl } from "./shared/urls";
 import "./styles.css";
 
 class ErrorBoundary extends Component<
@@ -16,7 +17,7 @@ class ErrorBoundary extends Component<
       <main className="app-error">
         <h1>Не удалось открыть конструктор.</h1>
         <p>Обнови страницу. Сохранённый проект останется в браузере.</p>
-        <a className="button button-primary" href="/custom">
+        <a className="button button-primary" href={appUrl("/custom")}>
           На главную Custom ↗
         </a>
       </main>

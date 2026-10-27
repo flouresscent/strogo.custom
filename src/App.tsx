@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Landing from "./landing/Landing";
 import Editor from "./editor/Editor";
+import { appUrl, assetUrl, getAppPathname } from "./shared/urls";
 
 const links = [
   [
@@ -8,13 +9,14 @@ const links = [
     "https://strogo.shop/catalog?tfc_storepartnav%5B2985782801%5D=377708019663&tfc_div=:::",
   ],
   ["Премиум ковры", "https://strogo.shop/darkness"],
-  ["Custom", "/custom"],
+  ["Custom", appUrl("/custom")],
   ["Поддержка", "https://t.me/strogoMagaz"],
 ];
 export function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const editor =
-    window.location.pathname.replace(/\/$/, "") === "/custom/create";
+    getAppPathname(window.location.pathname).replace(/\/$/, "") ===
+    "/custom/create";
   if (!editor) return <Landing />;
   return (
     <>
@@ -27,7 +29,7 @@ export function App() {
           className="brand"
           aria-label="Strogo Shop — основной магазин"
         >
-          <img src="/assets/strogo-logo.png" alt="Strogo" />
+          <img src={assetUrl("/assets/strogo-logo.png")} alt="Strogo" />
         </a>
         <nav
           className={menuOpen ? "site-nav is-open" : "site-nav"}

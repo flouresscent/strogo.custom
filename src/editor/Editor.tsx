@@ -38,6 +38,7 @@ import {
 import { uploadImage } from "./upload";
 import { saveProject, loadProject, clearProject } from "./persistence";
 import { addToDemoCart } from "../checkout";
+import { appUrl, assetUrl } from "../shared/urls";
 import "./editor.css";
 
 const EXAMPLES = [
@@ -618,7 +619,7 @@ export default function Editor() {
     <section className="custom-editor" aria-label="Конструктор коврика">
       <div className="editor-topline">
         <div>
-          <a className="editor-back" href="/custom">
+          <a className="editor-back" href={appUrl("/custom")}>
             ← Strogo Custom
           </a>
           <h1>Твоя территория.</h1>
@@ -836,7 +837,7 @@ export default function Editor() {
                       aria-label={`Применить принт ${example.name}`}
                     >
                       <img
-                        src={`/assets/${example.id}.svg`}
+                        src={assetUrl(`/assets/${example.id}.svg`)}
                         alt=""
                         style={{ background: example.color }}
                       />

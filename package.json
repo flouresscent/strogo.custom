@@ -5,15 +5,18 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 127.0.0.1",
-    "build": "tsc --noEmit && vite build",
+    "build": "tsc --noEmit && vite build && node scripts/create-static-routes.mjs",
     "preview": "vite preview --host 127.0.0.1",
     "typecheck": "tsc --noEmit",
-    "test": "tsx --test src/editor/domain.test.ts src/checkout.test.ts",
+    "test": "tsx --test src/editor/domain.test.ts src/checkout.test.ts src/shared/urls.test.ts",
     "test:browser": "playwright test",
     "format:check": "prettier --check src index.html vite.config.ts playwright.config.ts tests",
     "format": "prettier --write src index.html vite.config.ts playwright.config.ts tests"
   },
-  "dependencies": { "react": "^19.2.0", "react-dom": "^19.2.0" },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
   "devDependencies": {
     "@playwright/test": "^1.56.0",
     "@types/node": "^24.0.0",

@@ -1,5 +1,6 @@
 import { useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 import "./product-explorer.css";
+import { appUrl, assetUrl } from "../shared/urls";
 
 const features = [
   {
@@ -117,7 +118,7 @@ function RugShape({
           <img
             key={design.name}
             className={`pe-artwork-image${index === settings.design ? " pe-layer-active" : ""}`}
-            src={design.source}
+            src={assetUrl(design.source)}
             alt=""
             draggable="false"
             loading="lazy"
@@ -278,7 +279,7 @@ function FeatureControls({
               aria-pressed={index === settings.design}
               onClick={() => onChange({ design: index })}
             >
-              <img src={design.source} alt="" />
+              <img src={assetUrl(design.source)} alt="" />
               {design.name}
             </button>
           ))}
@@ -663,7 +664,10 @@ export default function ProductExplorer() {
           </div>
           <footer className="pe-dialog-footer">
             <p>Пример возможностей. Форматы и параметры изделия — концепция.</p>
-            <a href="/custom/create" className="pl-button pl-button-primary">
+            <a
+              href={appUrl("/custom/create")}
+              className="pl-button pl-button-primary"
+            >
               Создать свой коврик <Icon kind="arrow" />
             </a>
           </footer>

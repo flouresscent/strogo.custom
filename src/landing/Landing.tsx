@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import ScrollHero from "./ScrollHero";
 import LandingSections from "./LandingSections";
+import { appUrl } from "../shared/urls";
 import "./landing.css";
 
 export default function Landing() {
@@ -25,7 +26,7 @@ export default function Landing() {
       <header className="pl-header">
         <div className="pl-nav-shell">
           <a
-            href="/custom"
+            href={appUrl("/custom")}
             className="pl-wordmark"
             aria-label="Strogo Custom — главная"
           >
@@ -50,7 +51,7 @@ export default function Landing() {
             <a
               className="pl-button pl-button-primary pl-header-cta"
               aria-label="Создать свой коврик"
-              href="/custom/create"
+              href={appUrl("/custom/create")}
             >
               Создать
             </a>
@@ -73,7 +74,7 @@ export default function Landing() {
       </main>
       <footer className="pl-footer">
         <div className="pl-footer-top">
-          <a href="/custom" className="pl-wordmark">
+          <a href={appUrl("/custom")} className="pl-wordmark">
             Strogo<span>Custom</span>
           </a>
           <p>Всё начинается с твоей идеи.</p>

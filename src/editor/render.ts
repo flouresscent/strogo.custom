@@ -7,6 +7,7 @@ import {
   type ImageLayer,
   type Point,
 } from "./domain";
+import { assetUrl } from "../shared/urls";
 
 // Local bundled examples and browser-local uploads only; never request customer art from a server.
 const imageCache = new Map<string, Promise<HTMLImageElement>>();
@@ -53,7 +54,7 @@ export function loadImage(src: string): Promise<HTMLImageElement> {
         new Error("Не удалось прочитать изображение. Попробуйте другой файл."),
       );
     };
-    img.src = src;
+    img.src = assetUrl(src);
   });
   // Limit decoded image retention; active image references remain valid through the drawing promise.
   if (imageCache.size >= 12) imageCache.delete(imageCache.keys().next().value!);
