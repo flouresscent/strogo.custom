@@ -1,0 +1,51 @@
+{
+  "method": "Same helper, Chrome build, viewport 1440 × 1000 / DPR 1, warm assets, three-second normalized hero start-to-end scroll. Final runs executed sequentially.",
+  "beforeSource": "e82eb38c3e740b09bafb67a2249cbaac2c3ca7fda0fea8ff1f94ecb8e6985565",
+  "afterSource": "c673addd5c3622b1577087098389ac8bf30a0571211df22518e1e5847ef87a76",
+  "finalRendering": {
+    "engine": "view-timeline",
+    "closeupSurface": {
+      "widthCssPx": 1800,
+      "sourceWidthPx": 1800,
+      "sourceHeightPx": 800
+    }
+  },
+  "rafP95Ms": {
+    "before": 33.29999999999973,
+    "after": 16.799999999999955
+  },
+  "rafIntervalsOver25ms": {
+    "before": 10,
+    "after": 0
+  },
+  "scriptCpuMs": {
+    "before": 20.488,
+    "after": 16.418
+  },
+  "styleCpuMs": {
+    "before": 40.637,
+    "after": 26.561
+  },
+  "paintEvents": {
+    "before": {
+      "count": 14,
+      "durationMs": 4.59
+    },
+    "after": {
+      "count": 7,
+      "durationMs": 7.14
+    }
+  },
+  "scrollTravelPx": {
+    "before": 2400,
+    "after": 2000
+  },
+  "limitations": [
+    "Single local headless Chrome run per source, without CPU throttling.",
+    "The section changed from 340svh to 300svh, so normalized animations cover 2400px before and 2000px after over the same three seconds.",
+    "rAF intervals indicate scheduling, not measured compositor FPS or human trackpad latency.",
+    "Trace Paint duration does not include all GPU raster cost. Paint duration and total TaskDuration did not improve, even though the observed frame interval p95 and style/script CPU improved.",
+    "Final source adds a separate 1800 × 800 closeup image surface for initial photo sharpness. Its resource cost is included in the final after measurement.",
+    "Host load can vary; results are not a performance guarantee for other devices."
+  ]
+}

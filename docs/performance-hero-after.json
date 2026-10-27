@@ -1,0 +1,70 @@
+{
+  "phase": "after",
+  "capturedAt": "2026-10-27T02:11:50.334Z",
+  "browser": "156.0.8078.48",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+  "viewport": {
+    "width": 1440,
+    "height": 1000,
+    "dpr": 1
+  },
+  "sourceSha256": "c673addd5c3622b1577087098389ac8bf30a0571211df22518e1e5847ef87a76",
+  "rendering": {
+    "engine": "view-timeline",
+    "closeupSurface": {
+      "widthCssPx": 1800,
+      "sourceWidthPx": 1800,
+      "sourceHeightPx": 800
+    }
+  },
+  "workload": "One foreground headless Chrome tab, warm loaded assets, requestAnimationFrame scroll from hero start to end over 3000ms. CDP timeline tracing enabled in both runs. No CPU throttling.",
+  "scrollPx": 2000,
+  "elapsedMs": 3021.699999988079,
+  "rafSamples": 180,
+  "rafIntervalMs": {
+    "median": 16.699999999999818,
+    "p95": 16.799999999999955,
+    "max": 16.800000000000182,
+    "over25ms": 0,
+    "over50ms": 0
+  },
+  "metricsDelta": {
+    "LayoutCount": 1,
+    "RecalcStyleCount": 181,
+    "ScriptDuration": 0.016418,
+    "TaskDuration": 0.170674,
+    "LayoutDuration": 0.000442,
+    "RecalcStyleDuration": 0.026561
+  },
+  "timeline": {
+    "Paint": {
+      "count": 7,
+      "durationMs": 7.14
+    },
+    "PrePaint": {
+      "count": 204,
+      "durationMs": 22.58
+    },
+    "Layout": {
+      "count": 17,
+      "durationMs": 9.04
+    },
+    "UpdateLayoutTree": {
+      "count": 184,
+      "durationMs": 27.54
+    },
+    "Layerize": {
+      "count": 160,
+      "durationMs": 1.8
+    },
+    "CompositeLayers": {
+      "count": 0,
+      "durationMs": 0
+    },
+    "RasterTask": {
+      "count": 0,
+      "durationMs": 0
+    }
+  },
+  "limits": "Single local run, scheduling intervals and CPU timeline events, not compositor FPS or human trackpad latency. Host/background load may vary. Paint duration does not include all GPU raster cost. Requires matching same-workload comparison; no device-wide performance guarantee."
+}
